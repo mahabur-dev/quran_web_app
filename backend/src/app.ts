@@ -8,9 +8,15 @@ import { env } from './config/index.js';
 export const app = new Hono();
 
 app.use('*', logger());
+// app.use('*', cors({
+//   origin: env.CORS_ORIGIN === '*' ? '*' : env.CORS_ORIGIN.split(','),
+//   allowMethods: ['GET', 'OPTIONS'],
+// }));
 app.use('*', cors({
   origin: env.CORS_ORIGIN === '*' ? '*' : env.CORS_ORIGIN.split(','),
-  allowMethods: ['GET', 'OPTIONS'],
+  allowMethods: ['GET', 'POST', 'OPTIONS'],
+  allowHeaders: ['Content-Type', 'Authorization'],
+  maxAge: 600,
 }));
 
 app.route('/api', apiRoutes);
