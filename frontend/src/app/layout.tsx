@@ -6,7 +6,7 @@ import './globals.css';
 import { Sidebar } from '@/components/features/Sidebar';
 
 export const metadata: Metadata = {
-  title: 'Quran — Read, Search, Customize',
+  title: 'Al-Quran',
   description: 'Browse all 114 surahs with translation, search ayahs, and customize fonts.',
 };
 
