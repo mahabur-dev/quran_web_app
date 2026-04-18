@@ -1,6 +1,6 @@
 import type { ApiResponse, SearchHit, SurahDetail, SurahSummary } from '@/types/quran.types';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3001/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 // async function request<T>(path: string, init?: RequestInit): Promise<T> {
 //   const res = await fetch(`${API_URL}${path}`, {
