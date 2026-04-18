@@ -15,26 +15,6 @@ export default async function SurahPage({ params }: { params: { id: string } }) 
   if (!Number.isInteger(id) || id < 1 || id > 114) notFound();
   const surah = await api.getSurah(id).catch(() => null);
   if (!surah) notFound();
-  // return (
-  //   <article>
-  //     <header className="mb-6 flex items-center justify-between">
-  //       <div>
-  //         <p className="text-xs text-slate-500">Surah {surah.number} · {surah.revelationType}</p>
-  //         <h1 className="text-2xl font-bold text-slate-900">
-  //           {surah.englishName}{' '}
-  //           <span className="text-slate-500 font-normal text-base">({surah.englishNameTranslation})</span>
-  //         </h1>
-  //       </div>
-  //       <Link href="/" className="text-sm text-brand hover:underline" aria-label="Back to surah list">← All Surahs</Link>
-  //     </header>
-  //     <div className="space-y-4">
-  //       {surah.ayahs.map((ayah) => (
-  //         <div key={ayah.number} id={`ayah-${ayah.numberInSurah}`}>
-  //           <AyahCard ayah={ayah} />
-  //         </div>
-  //       ))}
-  //     </div>
-  //   </article>
   return (
     <article className="max-w-4xl mx-auto py-8 px-4">
       <header className="mb-10 flex items-end justify-between border-b border-white/5 pb-6">
