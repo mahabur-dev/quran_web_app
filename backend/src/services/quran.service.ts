@@ -35,7 +35,7 @@ class QuranService {
         name: tSurah.name,
         englishName: tSurah.englishName,
         englishNameTranslation: tSurah.englishNameTranslation,
-        numberOfAyahs: tSurah.numberOfAyahs,
+        numberOfAyahs: tSurah.numberOfAyahs ?? ayahs.length,
         revelationType: tSurah.revelationType,
         ayahs,
       };
