@@ -8,6 +8,7 @@ export interface Settings {
   arabicFontSize: number;
   translationFontSize: number;
   sidebarOpen: boolean;
+  leftSidebarOpen: boolean;
 }
 
 interface SettingsContextValue {
@@ -17,6 +18,8 @@ interface SettingsContextValue {
   setTranslationFontSize: (size: number) => void;
   setSidebarOpen: (open: boolean) => void;
   toggleSidebar: () => void;
+  setLeftSidebarOpen: (open: boolean) => void;
+  toggleLeftSidebar: () => void;
 }
 
 const DEFAULT_SETTINGS: Settings = {
@@ -24,6 +27,7 @@ const DEFAULT_SETTINGS: Settings = {
   arabicFontSize: 32,
   translationFontSize: 16,
   sidebarOpen: false,
+  leftSidebarOpen: false,
 };
 
 const SettingsContext = createContext<SettingsContextValue | null>(null);
@@ -38,6 +42,8 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     setTranslationFontSize: (translationFontSize) => setSettings((s) => ({ ...s, translationFontSize })),
     setSidebarOpen: (sidebarOpen) => setSettings((s) => ({ ...s, sidebarOpen })),
     toggleSidebar: () => setSettings((s) => ({ ...s, sidebarOpen: !s.sidebarOpen })),
+    setLeftSidebarOpen: (leftSidebarOpen) => setSettings((s) => ({ ...s, leftSidebarOpen })),
+    toggleLeftSidebar: () => setSettings((s) => ({ ...s, leftSidebarOpen: !s.leftSidebarOpen })),
   }), [settings, setSettings]);
 
   return <SettingsContext.Provider value={value}>{children}</SettingsContext.Provider>;

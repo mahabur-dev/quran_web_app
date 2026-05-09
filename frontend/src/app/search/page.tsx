@@ -24,13 +24,15 @@ export default function SearchPage() {
   }, [debounced]);
 
   return (
-    <section className="space-y-5">
-      <header>
-        <h1 className="text-2xl font-bold text-slate-900">Search</h1>
-        <p className="text-slate-600 text-sm mt-1">Search across the entire Quran by translation text.</p>
+    <div className="h-full flex flex-col items-center pt-12 px-6 pb-20">
+      <header className="mb-8 text-center max-w-2xl w-full">
+        <h1 className="text-3xl font-semibold text-white mb-2">Search The Quran</h1>
+        <p className="text-sm text-qm-textSecondary">Find ayahs by Arabic or English translation text.</p>
       </header>
-      <SearchBar value={query} onChange={setQuery} />
-      <SearchResults hits={hits} query={debounced} loading={loading} />
-    </section>
+      <div className="w-full max-w-2xl space-y-8">
+        <SearchBar value={query} onChange={setQuery} />
+        <SearchResults hits={hits} query={debounced} loading={loading} />
+      </div>
+    </div>
   );
 }

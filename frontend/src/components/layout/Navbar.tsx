@@ -1,69 +1,36 @@
 'use client';
+
 import Link from 'next/link';
+import { Search, Settings, Heart, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { useSettings } from '@/context/SettingsContext';
-import { Book } from 'lucide-react';
 
 export function Navbar() {
-  const { toggleSidebar } = useSettings();
+  const { toggleSidebar, toggleLeftSidebar } = useSettings();
+
   return (
-    // <header className="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-slate-200">
-    //   <div className="mx-auto max-w-5xl flex items-center justify-between px-6 h-20">
-    //     {/* <Book className="w-6 h-6 text-primary" />
-    //     <Link href="/" className="font-bold text-lg text-brand">
-    //     Al-Quran</Link> */}
-    //      <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-    //       <Book className="w-6 h-6 text-primary" />
-    //       <h1 className="text-xl font-bold text-foreground">Al-Quran</h1>
-    //     </Link>
-    //     <nav className="flex items-center gap-2">
-    //       <Link href="/search"><Button variant="ghost" className="text-foreground font-bold" size="sm">Search</Button></Link>
-    //       <Button variant="secondary"  className="text-foreground font-bold"size="sm" onClick={toggleSidebar}>Settings</Button>
-    //     </nav>
-    //   </div>
-    // </header>
-//     <header className="sticky top-0 z-30" style={{ background: "#1A4436" }}>
-//   <div className="mx-auto max-w-5xl flex items-center justify-between px-8 h-[72px]">
-//     <Link href="/" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-//       <Book className="w-5 h-5" style={{ color: "#A8D5B5" }} />
-//       <h1 className="text-lg font-medium text-white tracking-wide">Al-Quran</h1>
-//     </Link>
-//     <nav className="flex items-center gap-2">
-//       <Link href="/search">
-//         <Button variant="ghost" size="sm"
-//           className="font-medium hover:bg-white/10"
-//           style={{ color: "rgba(255,255,255,0.70)" }}>
-//           Search
-//         </Button>
-//       </Link>
-//       <Button size="sm" onClick={toggleSidebar}
-//         style={{ background: "#A8D5B5", color: "#1A4436" }}
-//         className="font-medium hover:opacity-90 border-0">
-//         Settings
-//       </Button>
-//     </nav>
-//   </div>
-// </header>
-<header className="sticky top-0 z-30 bg-slate-900">
-  <div className="mx-auto max-w-5xl flex items-center justify-between px-8 h-[72px]">
-    <Link href="/" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-      <Book className="w-5 h-5" style={{ color: "#C8A96E" }} />
-      <h1 className="text-lg font-medium text-white tracking-wide">Al-Quran</h1>
-    </Link>
-    <nav className="flex items-center gap-2">
-      <Link href="/search">
-        <Button variant="ghost" size="sm"
-          className="text-white/70 hover:text-white hover:bg-white/10 font-medium">
-          Search
+    <header className="flex items-center justify-between px-4 sm:px-6 h-[72px] bg-qm-panel border-b border-qm-border shrink-0">
+      <div className="flex items-center gap-4">
+        <button onClick={toggleLeftSidebar} className="md:hidden text-qm-textSecondary hover:text-white transition-colors">
+          <Menu className="w-6 h-6" />
+        </button>
+        <div className="flex flex-col justify-center">
+          <h1 className="text-xl font-bold text-white tracking-wide">Quran Mazid</h1>
+          <p className="text-[10px] text-qm-textSecondary uppercase tracking-widest hidden sm:block">Read, Study, and Learn The Quran</p>
+        </div>
+      </div>
+      
+      <div className="flex items-center gap-5">
+        <Link href="/search" className="text-qm-textSecondary hover:text-white transition-colors">
+          <Search className="w-5 h-5" />
+        </Link>
+        <button className="text-qm-textSecondary hover:text-white transition-colors xl:hidden" onClick={toggleSidebar}>
+          <Settings className="w-5 h-5" />
+        </button>
+        <Button className="bg-brand hover:bg-brand-dark text-white rounded-full px-5 py-2 flex items-center gap-2 h-auto text-sm font-medium border-0">
+          Support Us <Heart className="w-4 h-4 fill-white" />
         </Button>
-      </Link>
-      <Button size="sm" onClick={toggleSidebar}
-        style={{ background: "#C8A96E", color: "#1B2B4B" }}
-        className="font-medium hover:opacity-90">
-        Settings
-      </Button>
-    </nav>
-  </div>
-</header>
+      </div>
+    </header>
   );
 }

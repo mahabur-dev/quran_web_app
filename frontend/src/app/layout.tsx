@@ -1,52 +1,42 @@
-// import type { Metadata } from 'next';
-// import { amiri, naskh, scheherazade } from '@/config/fonts';
-// import { SettingsProvider } from '@/context/SettingsContext';
-// import { Navbar } from '@/components/layout/Navbar';
-// import './globals.css';
-// import { Sidebar } from '@/components/features/Sidebar';
-
-// export const metadata: Metadata = {
-//   title: 'Al-Quran',
-//   description: 'Browse all 114 surahs with translation, search ayahs, and customize fonts.',
-// };
-
-// export default function RootLayout({ children }: { children: React.ReactNode }) {
-//   return (
-//     <html lang="en" className={`${amiri.variable} ${scheherazade.variable} ${naskh.variable}`}>
-//       <body className="min-h-screen">
-//         <SettingsProvider>
-//           <Navbar />
-//           <main className="mx-auto max-w-5xl px-4 py-6">{children}</main>
-//           <Sidebar />
-//         </SettingsProvider>
-//       </body>
-//     </html>
-//   );
-// }
-
 import type { Metadata } from 'next';
 import { amiri, naskh, scheherazade } from '@/config/fonts';
 import { SettingsProvider } from '@/context/SettingsContext';
+import { IconSidebar } from '@/components/layout/IconSidebar';
 import { Navbar } from '@/components/layout/Navbar';
+import { RightSidebar } from '@/components/layout/RightSidebar';
+import { LeftNavigation } from '@/components/layout/LeftNavigation';
 import './globals.css';
-import { Sidebar } from '@/components/features/Sidebar';
-import { ClientWrapper } from '@/components/layout/ClientWrapper'; // We will create this
 
 export const metadata: Metadata = {
-  title: 'Al-Quran',
-  description: 'Browse all 114 surahs with translation, search ayahs, and customize fonts.',
+  title: 'Quran Mazid',
+  description: 'Read, Study, and Learn The Quran',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${amiri.variable} ${scheherazade.variable} ${naskh.variable}`}>
-      <body className="min-h-screen bg-[#060b16] antialiased">
+      <body className="h-screen w-screen bg-qm-main text-white overflow-hidden flex font-sans antialiased">
         <SettingsProvider>
-          <Navbar />
-          <ClientWrapper>
-            {children}
-          </ClientWrapper>
-          <Sidebar />
+          {/* Far Left Icon Sidebar */}
+          <IconSidebar />
+          
+          <div className="flex-1 flex flex-col h-full relative overflow-hidden">
+            {/* Top Navbar */}
+            <Navbar />
+            
+            <div className="flex-1 flex overflow-hidden">
+              {/* Left Navigation Sidebar (Surah, Juz, Page) */}
+              <LeftNavigation />
+              
+              {/* Main Content Area */}
+              <main className="flex-1 overflow-y-auto custom-scrollbar relative">
+                {children}
+              </main>
+
+              {/* Right Settings Sidebar */}
+              <RightSidebar />
+            </div>
+          </div>
         </SettingsProvider>
       </body>
     </html>

@@ -36,16 +36,16 @@ export function SearchResults({ hits, query, loading }: SearchResultsProps) {
         <li key={`${hit.surahNumber}-${hit.numberInSurah}`}>
           <Link 
             href={`/surah/${hit.surahNumber}#ayah-${hit.numberInSurah}`}
-            className="group block rounded-xl border border-white/5 bg-white/[0.02] p-5 transition-all duration-300 hover:bg-white/[0.05] hover:border-teal-500/30 hover:translate-x-1"
+            className="group block rounded-xl border border-qm-border bg-qm-panel p-5 transition-all duration-300 hover:border-brand hover:translate-x-1"
           >
             {/* Metadata Header */}
-            <div className="flex justify-between items-center mb-4 border-b border-white/5 pb-3">
+            <div className="flex justify-between items-center mb-4 border-b border-qm-border pb-3">
               <div className="flex items-center gap-2">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-teal-500 bg-teal-500/10 px-2 py-1 rounded">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-brand bg-brand/10 px-2 py-1 rounded">
                   {hit.surahEnglishName} {hit.surahNumber}:{hit.numberInSurah}
                 </span>
               </div>
-              <span dir="rtl" className="text-lg text-slate-300 font-arabic-amiri opacity-80 group-hover:opacity-100 transition-opacity">
+              <span dir="rtl" className="text-lg text-qm-textSecondary font-arabic-amiri opacity-80 group-hover:opacity-100 transition-opacity">
                 {hit.surahName}
               </span>
             </div>
@@ -53,7 +53,7 @@ export function SearchResults({ hits, query, loading }: SearchResultsProps) {
             {/* Arabic Text Highlight */}
             <p 
               dir="rtl" 
-              className={cn('leading-relaxed text-slate-100 mb-3 transition-colors group-hover:text-white', fontClass)}
+              className={cn('leading-relaxed text-white mb-3 transition-colors', fontClass)}
               style={{ fontSize: `${settings.arabicFontSize - 4}px` }}
             >
               {hit.arabic}
@@ -61,7 +61,7 @@ export function SearchResults({ hits, query, loading }: SearchResultsProps) {
 
             {/* Translation text with query highlighting concept */}
             <p 
-              className="text-slate-400 leading-relaxed font-light"
+              className="text-qm-textSecondary leading-relaxed font-light"
               style={{ fontSize: `${settings.translationFontSize}px` }}
             >
               {hit.translation}
