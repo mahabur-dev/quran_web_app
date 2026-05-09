@@ -34,8 +34,6 @@ export function LeftNavigationClient({ surahs }: { surahs: SurahSummary[] }) {
         <div className="p-4 border-b border-qm-border">
         <div className="flex bg-[#0B0B0B] rounded-full p-1 mb-4">
           <button className="flex-1 py-1.5 px-3 rounded-full bg-qm-border text-white text-sm font-medium">Surah</button>
-          <button className="flex-1 py-1.5 px-3 rounded-full text-qm-textSecondary hover:text-white text-sm font-medium transition-colors">Juz</button>
-          <button className="flex-1 py-1.5 px-3 rounded-full text-qm-textSecondary hover:text-white text-sm font-medium transition-colors">Page</button>
         </div>
         
         <div className="relative">

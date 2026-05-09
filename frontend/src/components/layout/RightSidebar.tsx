@@ -12,7 +12,7 @@ export function RightSidebar() {
 
   return (
     <>
-      {/* Mobile Backdrop */}
+     
       {settings.sidebarOpen && (
         <div 
           className="fixed inset-0 bg-black/50 z-40 xl:hidden"
@@ -26,7 +26,6 @@ export function RightSidebar() {
         <div className="p-4 border-b border-qm-border">
         <div className="flex bg-[#0B0B0B] rounded-full p-1">
           <button className="flex-1 py-1.5 px-3 rounded-full bg-qm-border text-white text-sm font-medium">Translation</button>
-          <button className="flex-1 py-1.5 px-3 rounded-full text-qm-textSecondary hover:text-white text-sm font-medium transition-colors">Reading</button>
         </div>
       </div>
 
@@ -103,16 +102,6 @@ export function RightSidebar() {
               </div>
             </div>
           )}
-        </div>
-
-        <div className="mt-8 bg-[#0B0B0B] border border-qm-border rounded-xl p-5">
-          <h4 className="text-white font-medium mb-2 leading-tight">Help spread the knowledge of Islam</h4>
-          <p className="text-qm-textSecondary text-xs leading-relaxed mb-4">
-            Your regular support helps us reach our religious brothers and sisters with the message of Islam. Join our mission and be part of the big change.
-          </p>
-          <Button className="w-full bg-brand hover:bg-brand-dark text-white border-0 py-2 rounded-lg text-sm font-medium">
-            Support Us
-          </Button>
         </div>
       </div>
     </aside>
