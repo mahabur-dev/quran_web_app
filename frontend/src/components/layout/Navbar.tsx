@@ -27,9 +27,6 @@ export function Navbar() {
         <button className="text-qm-textSecondary hover:text-white transition-colors xl:hidden" onClick={toggleSidebar}>
           <Settings className="w-5 h-5" />
         </button>
-        <Button className="bg-brand hover:bg-brand-dark text-white rounded-full px-5 py-2 flex items-center gap-2 h-auto text-sm font-medium border-0">
-          Support Us <Heart className="w-4 h-4 fill-white" />
-        </Button>
       </div>
     </header>
   );
