@@ -20,10 +20,10 @@ export default async function SurahPage({ params }: { params: { id: string } }) 
       <header className="relative flex-shrink-0 border-b border-qm-border py-12 flex flex-col items-center justify-center overflow-hidden min-h-[200px]">
         {/* We can use a subtle background pattern or image here, like a Kaaba silhouette */}
         <div className="absolute inset-0 opacity-10 flex items-center justify-start ml-20 pointer-events-none">
-           {/* Placeholder for Kaaba vector or use CSS */}
-           <div className="w-64 h-64 bg-white rounded-full blur-3xl opacity-5 absolute left-0"></div>
+          {/* Placeholder for Kaaba vector or use CSS */}
+          <div className="w-64 h-64 bg-white rounded-full blur-3xl opacity-5 absolute left-0"></div>
         </div>
-        
+
         <h1 className="text-3xl font-semibold text-white tracking-wide mb-2 relative z-10">
           Surah {surah.englishName}
         </h1>
