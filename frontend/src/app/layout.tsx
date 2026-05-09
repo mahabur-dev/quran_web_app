@@ -8,14 +8,9 @@ import { LeftNavigation } from '@/components/layout/LeftNavigation';
 import './globals.css';
 
 export const metadata: Metadata = {
-<<<<<<< HEAD
   title: 'Quran Mazid',
-  description: 'Read, Study, and Learn The Quran',
-=======
-  title: 'Al-Quran',
   icons: { icon: '/icon.svg' },
-  description: 'Browse all 114 surahs with translation, search ayahs, and customize fonts.',
->>>>>>> b1f8d80386eb3c195666561130d9144b6030344e
+  description: 'Read, Study, and Learn The Quran',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
